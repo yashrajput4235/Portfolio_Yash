@@ -28,6 +28,20 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Get all contacts (admin endpoint)
+  app.get("/api/contacts", async (req, res) => {
+    try {
+      const contacts = await storage.getContacts();
+      res.json({ success: true, contacts });
+    } catch (error) {
+      console.error("Error fetching contacts:", error);
+      res.status(500).json({ 
+        success: false, 
+        message: "Failed to fetch contacts" 
+      });
+    }
+  });
+
   // Resume download endpoint
   app.get("/api/resume", async (req, res) => {
     try {
