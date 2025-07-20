@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Mail, Linkedin, Github, Code, Phone, Download } from "lucide-react";
+import { TypingAnimation } from "./typing-animation";
+import { ParticlesBackground } from "./particles-background";
 
 export function HeroSection() {
   const handleDownloadResume = () => {
@@ -22,28 +24,38 @@ export function HeroSection() {
   };
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center pt-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center pt-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <ParticlesBackground />
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
         <div className="text-center lg:text-left animate-in fade-in slide-in-from-left duration-1000">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            Hi, I'm <span className="text-primary">Yash Rajput</span>
+            Hi, I'm <span className="gradient-text">Yash Rajput</span>
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8">
-            Software Developer & AI Enthusiast
-          </p>
+          <div className="text-xl md:text-2xl text-muted-foreground mb-8 h-16 flex items-center">
+            <TypingAnimation 
+              texts={[
+                "Software Developer",
+                "AI Enthusiast", 
+                "Full-Stack Engineer",
+                "IoT Innovator",
+                "Problem Solver"
+              ]}
+              className="font-semibold"
+            />
+          </div>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl">
             Passionate about building scalable web applications and AI solutions. Currently pursuing B.Tech in Computer Science with expertise in full-stack development, machine learning, and IoT systems.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-8">
-            <Button onClick={scrollToContact} size="lg" className="w-full sm:w-auto">
+            <Button onClick={scrollToContact} size="lg" className="w-full sm:w-auto pulse-glow hover:scale-105 transition-transform duration-300">
               Get In Touch
             </Button>
             <Button
               variant="outline"
               size="lg"
               onClick={handleDownloadResume}
-              className="w-full sm:w-auto"
+              className="w-full sm:w-auto hover:scale-105 transition-transform duration-300"
             >
               <Download className="w-4 h-4 mr-2" />
               Download Resume
@@ -67,11 +79,14 @@ export function HeroSection() {
         </div>
 
         <div className="flex justify-center lg:justify-end animate-in fade-in slide-in-from-right duration-1000">
-          <img
-            src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=800"
-            alt="Professional developer workspace"
-            className="rounded-2xl shadow-2xl w-full max-w-md lg:max-w-lg object-cover"
-          />
+          <div className="relative">
+            <img
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=800"
+              alt="Professional software developer"
+              className="rounded-2xl shadow-2xl w-full max-w-md lg:max-w-lg object-cover float-animation"
+            />
+            <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-purple-600/20 rounded-2xl blur-2xl opacity-30"></div>
+          </div>
         </div>
       </div>
     </section>

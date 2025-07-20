@@ -73,7 +73,7 @@ export function EducationSection() {
               {educationData.map((edu, index) => (
                 <div
                   key={index}
-                  className="bg-card p-6 rounded-xl shadow-lg border animate-in fade-in slide-in-from-left duration-700"
+                  className="bg-card p-6 rounded-xl shadow-lg border hover-lift animate-in fade-in slide-in-from-left duration-700 group"
                   style={{ animationDelay: `${index * 200}ms` }}
                 >
                   <div className="flex items-start justify-between mb-4">
@@ -107,7 +107,7 @@ export function EducationSection() {
               {achievements.map((achievement, index) => (
                 <div
                   key={index}
-                  className="bg-card p-6 rounded-xl shadow-lg border animate-in fade-in slide-in-from-right duration-700"
+                  className="bg-card p-6 rounded-xl shadow-lg border hover-lift animate-in fade-in slide-in-from-right duration-700 group"
                   style={{ animationDelay: `${index * 200}ms` }}
                 >
                   <div className="flex items-start mb-4">

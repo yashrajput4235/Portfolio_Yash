@@ -6,11 +6,13 @@ import { ExperienceSection } from "@/components/experience-section";
 import { ProjectsSection } from "@/components/projects-section";
 import { EducationSection } from "@/components/education-section";
 import { ContactSection } from "@/components/contact-section";
+import { LoadingScreen } from "@/components/loading-screen";
 import { Button } from "@/components/ui/button";
 import { ArrowUp, Mail, Linkedin, Github, Code } from "lucide-react";
 
 export default function Home() {
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const [showLoading, setShowLoading] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,7 +20,16 @@ export default function Home() {
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    
+    // Hide loading screen after a delay
+    const timer = setTimeout(() => {
+      setShowLoading(false);
+    }, 2500);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      clearTimeout(timer);
+    };
   }, []);
 
   const scrollToTop = () => {
@@ -31,6 +42,10 @@ export default function Home() {
     { icon: Github, href: "https://github.com/yashrajput4235" },
     { icon: Code, href: "https://leetcode.com/YashRajput" },
   ];
+
+  if (showLoading) {
+    return <LoadingScreen />;
+  }
 
   return (
     <div className="min-h-screen bg-background">

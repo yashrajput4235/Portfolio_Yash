@@ -70,11 +70,11 @@ export function SkillsSection() {
           {skillCategories.map((category, categoryIndex) => (
             <div
               key={category.title}
-              className="bg-card p-6 rounded-xl shadow-lg border animate-in fade-in slide-in-from-bottom duration-700"
+              className="bg-card p-6 rounded-xl shadow-lg border hover-lift animate-in fade-in slide-in-from-bottom duration-700 group"
               style={{ animationDelay: `${categoryIndex * 200}ms` }}
             >
-              <h3 className="text-xl font-semibold mb-4 flex items-center">
-                <category.icon className="w-5 h-5 text-primary mr-3" />
+              <h3 className="text-xl font-semibold mb-4 flex items-center group-hover:text-primary transition-colors duration-300">
+                <category.icon className="w-5 h-5 text-primary mr-3 group-hover:scale-110 transition-transform duration-300" />
                 {category.title}
               </h3>
               <div className="space-y-4">

@@ -50,7 +50,7 @@ export function ExperienceSection() {
                 {exp.isLeft ? (
                   <>
                     <div className="lg:text-right">
-                      <div className="bg-card p-6 rounded-xl shadow-lg border">
+                      <div className="bg-card p-6 rounded-xl shadow-lg border hover-lift group">
                         <div className="flex items-center justify-between mb-4">
                           <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
                             {exp.period}
@@ -78,7 +78,7 @@ export function ExperienceSection() {
                     {/* Timeline Dot */}
                     <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background hidden lg:block"></div>
                     <div>
-                      <div className="bg-card p-6 rounded-xl shadow-lg border">
+                      <div className="bg-card p-6 rounded-xl shadow-lg border hover-lift group">
                         <div className="flex items-center justify-between mb-4">
                           <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
                             {exp.period}

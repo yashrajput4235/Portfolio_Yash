@@ -44,14 +44,19 @@ export function ProjectsSection() {
           {projects.map((project, index) => (
             <div
               key={project.title}
-              className="bg-card rounded-xl overflow-hidden shadow-lg border hover:shadow-xl transition-shadow duration-300 animate-in fade-in slide-in-from-bottom duration-700"
+              className="bg-card rounded-xl overflow-hidden shadow-lg border hover-lift animate-in fade-in slide-in-from-bottom duration-700 group"
               style={{ animationDelay: `${index * 200}ms` }}
             >
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-48 object-cover"
-              />
+              <div className="relative overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <div className="text-white text-sm font-semibold">View Project</div>
+                </div>
+              </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-3">{project.title}</h3>
                 <p className="text-muted-foreground mb-4 text-sm leading-relaxed">

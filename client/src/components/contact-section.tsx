@@ -90,8 +90,9 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-muted/30">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-20 bg-muted/30 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-purple-600/5"></div>
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Let's Work Together</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -127,7 +128,8 @@ export function ContactSection() {
 
           {/* Contact Form */}
           <div className="animate-in fade-in slide-in-from-right duration-700">
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+            <div className="glass-effect p-8 rounded-2xl">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               <div>
                 <Label htmlFor="name">Full Name</Label>
                 <Input
@@ -186,12 +188,13 @@ export function ContactSection() {
                 type="submit"
                 size="lg"
                 disabled={isSubmitting}
-                className="w-full"
+                className="w-full pulse-glow hover:scale-105 transition-transform duration-300"
               >
                 <Send className="w-4 h-4 mr-2" />
                 {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
-            </form>
+              </form>
+            </div>
           </div>
         </div>
       </div>
