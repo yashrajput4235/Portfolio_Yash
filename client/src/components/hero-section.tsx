@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Mail, Linkedin, Github, Code, Phone, Download } from "lucide-react";
 import { TypingAnimation } from "./typing-animation";
 import { ParticlesBackground } from "./particles-background";
+import aiPhoto from "@assets/ai photo_1753038233607.jpg";
 
 export function HeroSection() {
   const handleDownloadResume = () => {
@@ -81,7 +82,7 @@ export function HeroSection() {
         <div className="flex justify-center lg:justify-end animate-in fade-in slide-in-from-right duration-1000">
           <div className="relative">
             <img
-              src="/attached_assets/ai%20photo_1753038233607.jpg"
+              src={aiPhoto}
               alt="AI-generated illustration of developer working on laptop"
               className="rounded-2xl shadow-2xl w-full max-w-md lg:max-w-lg object-cover float-animation"
             />
