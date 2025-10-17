@@ -49,42 +49,49 @@ export function Navigation() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-white/20 dark:border-white/10">
+    <nav className="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-white/20 dark:border-white/10 animate-in slide-in-from-top duration-700">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="font-bold text-xl gradient-text">
+          <div className="font-bold text-xl gradient-text smooth-appear">
             Yash Rajput
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8 stagger-animation">
             {navItems.map((item) => (
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
+                className={`text-sm font-medium transition-all duration-300 relative group ${
                   activeSection === item.href.substring(1)
                     ? "text-primary"
                     : "text-gray-600 dark:text-gray-300"
                 }`}
+                data-testid={`nav-${item.label.toLowerCase()}`}
               >
                 {item.label}
+                <span
+                  className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 ${
+                    activeSection === item.href.substring(1) ? "w-full" : "w-0 group-hover:w-full"
+                  }`}
+                />
               </button>
             ))}
           </div>
 
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-4 smooth-appear" style={{ animationDelay: "0.6s" }}>
             {/* Theme Toggle */}
             <Button
               variant="ghost"
               size="icon"
               onClick={toggleTheme}
-              className="h-9 w-9"
+              className="h-9 w-9 transition-all duration-300 hover:scale-110 hover:rotate-12"
+              data-testid="button-theme-toggle"
             >
               {theme === "light" ? (
-                <Moon className="h-4 w-4" />
+                <Moon className="h-4 w-4 transition-transform duration-300" />
               ) : (
-                <Sun className="h-4 w-4" />
+                <Sun className="h-4 w-4 transition-transform duration-300" />
               )}
             </Button>
 
