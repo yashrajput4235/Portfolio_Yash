@@ -93,8 +93,9 @@ export function HeroSection() {
               src={aiPhoto}
               alt="AI-generated illustration of developer working on laptop"
               className="rounded-2xl shadow-2xl w-full max-w-md lg:max-w-lg object-cover float-animation"
+              data-testid="img-hero-profile"
             />
-            <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-purple-600/20 rounded-2xl blur-2xl opacity-30"></div>
+            <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-purple-600/20 rounded-2xl blur-2xl opacity-30 parallax-slow"></div>
           </div>
         </div>
       </div>

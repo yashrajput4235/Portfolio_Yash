@@ -354,6 +354,33 @@
     }
   }
 
+  /* Parallax Effects */
+  .parallax-slow {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .parallax-slow {
+      animation: parallaxFloat 20s ease-in-out infinite;
+    }
+  }
+
+  @keyframes parallaxFloat {
+    0%, 100% {
+      transform: translateY(0px) translateX(0px);
+    }
+    25% {
+      transform: translateY(-10px) translateX(5px);
+    }
+    50% {
+      transform: translateY(-5px) translateX(-5px);
+    }
+    75% {
+      transform: translateY(-15px) translateX(3px);
+    }
+  }
+
   /* Custom Scrollbar */
   ::-webkit-scrollbar {
     width: 8px;
