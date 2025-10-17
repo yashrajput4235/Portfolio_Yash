@@ -44,17 +44,18 @@ export function ProjectsSection() {
           {projects.map((project, index) => (
             <div
               key={project.title}
-              className="bg-card rounded-xl overflow-hidden shadow-lg border hover-lift animate-in fade-in slide-in-from-bottom duration-700 group"
+              className="bg-card rounded-xl overflow-hidden shadow-lg border hover-3d animate-in fade-in slide-in-from-bottom duration-700 group"
               style={{ animationDelay: `${index * 200}ms` }}
+              data-testid={`card-project-${index}`}
             >
               <div className="relative overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-48 object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-110"
                 />
-                <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <div className="text-white text-sm font-semibold">View Project</div>
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+                  <div className="text-white text-sm font-semibold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">View Project</div>
                 </div>
               </div>
               <div className="p-6">
@@ -75,9 +76,10 @@ export function ProjectsSection() {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-primary hover:text-primary/80"
+                      className="text-primary hover:text-primary/80 transition-all duration-300 hover:scale-110 group/btn"
+                      data-testid={`button-github-${index}`}
                     >
-                      <Github className="w-4 h-4 mr-2" />
+                      <Github className="w-4 h-4 mr-2 group-hover/btn:rotate-12 transition-transform duration-300" />
                       GitHub
                     </a>
                   </Button>
@@ -86,9 +88,10 @@ export function ProjectsSection() {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-foreground"
+                      className="text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-110 group/btn"
+                      data-testid={`button-live-${index}`}
                     >
-                      <ExternalLink className="w-4 h-4" />
+                      <ExternalLink className="w-4 h-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform duration-300" />
                     </a>
                   </Button>
                 </div>

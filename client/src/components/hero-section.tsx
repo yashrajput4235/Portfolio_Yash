@@ -48,30 +48,38 @@ export function HeroSection() {
             Passionate about building scalable web applications and AI solutions. Currently pursuing B.Tech in Computer Science with expertise in full-stack development, machine learning, and IoT systems.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-8">
-            <Button onClick={scrollToContact} size="lg" className="w-full sm:w-auto pulse-glow hover:scale-105 transition-transform duration-300">
+          <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-8 stagger-animation">
+            <Button 
+              onClick={scrollToContact} 
+              size="lg" 
+              className="w-full sm:w-auto pulse-glow hover:scale-105 transition-all duration-300 hover:shadow-2xl"
+              data-testid="button-get-in-touch"
+            >
               Get In Touch
             </Button>
             <Button
               variant="outline"
               size="lg"
               onClick={handleDownloadResume}
-              className="w-full sm:w-auto hover:scale-105 transition-transform duration-300"
+              className="w-full sm:w-auto hover:scale-105 transition-all duration-300 hover:shadow-lg group"
+              data-testid="button-download-resume"
             >
-              <Download className="w-4 h-4 mr-2" />
+              <Download className="w-4 h-4 mr-2 group-hover:animate-bounce" />
               Download Resume
             </Button>
           </div>
 
-          <div className="flex items-center justify-center lg:justify-start space-x-6">
-            {socialLinks.map((link) => (
+          <div className="flex items-center justify-center lg:justify-start space-x-6 stagger-animation">
+            {socialLinks.map((link, index) => (
               <a
                 key={link.label}
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-125 hover:-translate-y-1"
                 aria-label={link.label}
+                data-testid={`link-social-${link.label.toLowerCase()}`}
+                style={{ animationDelay: `${0.3 + index * 0.1}s` }}
               >
                 <link.icon className="w-5 h-5" />
               </a>
