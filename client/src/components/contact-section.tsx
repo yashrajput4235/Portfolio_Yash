@@ -103,12 +103,17 @@ export function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div className="animate-in fade-in slide-in-from-left duration-700">
-            <h3 className="text-2xl font-bold mb-6">Get In Touch</h3>
-            <div className="space-y-6">
+            <h3 className="text-2xl font-bold mb-6 smooth-appear">Get In Touch</h3>
+            <div className="space-y-6 stagger-animation">
               {contactInfo.map((info, index) => (
-                <div key={index} className="flex items-center">
-                  <div className="bg-primary/10 p-3 rounded-lg mr-4">
-                    <info.icon className="w-5 h-5 text-primary" />
+                <div 
+                  key={index} 
+                  className="flex items-center group cursor-pointer hover:translate-x-2 transition-all duration-300"
+                  data-testid={`contact-info-${index}`}
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div className="bg-primary/10 p-3 rounded-lg mr-4 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
+                    <info.icon className="w-5 h-5 text-primary group-hover:rotate-12 transition-transform duration-300" />
                   </div>
                   <div>
                     <p className="font-medium">{info.label}</p>
@@ -117,6 +122,7 @@ export function ContactSection() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-muted-foreground hover:text-primary transition-colors"
+                      data-testid={`link-${info.label.toLowerCase()}`}
                     >
                       {info.value}
                     </a>

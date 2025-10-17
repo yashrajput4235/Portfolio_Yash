@@ -50,18 +50,18 @@ export function ExperienceSection() {
                 {exp.isLeft ? (
                   <>
                     <div className="lg:text-right">
-                      <div className="bg-card p-6 rounded-xl shadow-lg border hover-lift group">
+                      <div className="bg-card p-6 rounded-xl shadow-lg border hover-3d group" data-testid={`experience-card-${index}`}>
                         <div className="flex items-center justify-between mb-4">
-                          <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
+                          <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium group-hover:scale-110 transition-transform duration-300">
                             {exp.period}
                           </span>
                         </div>
-                        <h3 className="text-xl font-bold mb-2">{exp.title}</h3>
+                        <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors duration-300">{exp.title}</h3>
                         <h4 className="text-primary font-semibold mb-4">{exp.company}</h4>
                         <ul className="space-y-2 text-muted-foreground">
                           {exp.achievements.map((achievement, achIndex) => (
-                            <li key={achIndex} className="flex items-start">
-                              <CheckCircle className="w-4 h-4 text-emerald-500 mt-1 mr-3 flex-shrink-0" />
+                            <li key={achIndex} className="flex items-start group/item">
+                              <CheckCircle className="w-4 h-4 text-emerald-500 mt-1 mr-3 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300" />
                               {achievement}
                             </li>
                           ))}
@@ -69,27 +69,27 @@ export function ExperienceSection() {
                       </div>
                     </div>
                     {/* Timeline Dot */}
-                    <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background hidden lg:block"></div>
+                    <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background hidden lg:block pulse-glow"></div>
                     <div className="hidden lg:block"></div>
                   </>
                 ) : (
                   <>
                     <div className="hidden lg:block"></div>
                     {/* Timeline Dot */}
-                    <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background hidden lg:block"></div>
+                    <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background hidden lg:block pulse-glow"></div>
                     <div>
-                      <div className="bg-card p-6 rounded-xl shadow-lg border hover-lift group">
+                      <div className="bg-card p-6 rounded-xl shadow-lg border hover-3d group" data-testid={`experience-card-${index}`}>
                         <div className="flex items-center justify-between mb-4">
-                          <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
+                          <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium group-hover:scale-110 transition-transform duration-300">
                             {exp.period}
                           </span>
                         </div>
-                        <h3 className="text-xl font-bold mb-2">{exp.title}</h3>
+                        <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors duration-300">{exp.title}</h3>
                         <h4 className="text-primary font-semibold mb-4">{exp.company}</h4>
                         <ul className="space-y-2 text-muted-foreground">
                           {exp.achievements.map((achievement, achIndex) => (
-                            <li key={achIndex} className="flex items-start">
-                              <CheckCircle className="w-4 h-4 text-emerald-500 mt-1 mr-3 flex-shrink-0" />
+                            <li key={achIndex} className="flex items-start group/item">
+                              <CheckCircle className="w-4 h-4 text-emerald-500 mt-1 mr-3 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300" />
                               {achievement}
                             </li>
                           ))}
