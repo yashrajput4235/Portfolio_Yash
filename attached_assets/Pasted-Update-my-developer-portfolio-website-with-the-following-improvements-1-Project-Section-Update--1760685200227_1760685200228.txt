@@ -1,0 +1,31 @@
+Update my developer portfolio website with the following improvements:
+
+1. **Project Section Update**
+   - In the "HydroWatch" project description, add this exact line:
+     “Co-inventor of an IoT solution automating water refilling in livestock farms, reducing manual labor by 80% and water wastage by 30%.”
+   - Keep the tone and formatting consistent with other project descriptions.
+
+2. **Animated Project Showcase (Ticker Style)**
+   - Below the main “Projects” section, or as a separate strip above the footer, display all project titles in a **single-line horizontal ticker animation** (like a news feed).
+   - The ticker should **scroll continuously from right to left**, and when the last project exits the screen, it should **loop smoothly** from the right again.
+   - Add **subtle hover effects** (e.g., pause animation and slightly enlarge the hovered project title).
+   - Each project name in the ticker should be **clickable**, linking to its corresponding detailed section or GitHub/live demo link.
+   - Ensure the ticker animation is **fully responsive** and **performance-optimized** (use CSS `@keyframes` or transform-based animation, not jQuery or heavy JS).
+   - Use a **modern, professional style** — e.g., slightly glowing text, minimal shadow, and consistent font with the rest of the site.
+
+3. **Design & Visuals**
+   - Keep the color scheme and typography consistent with the existing design.
+   - Use smooth transitions (`ease-in-out`), no abrupt looping.
+   - Ensure dark mode compatibility if the portfolio supports it.
+
+4. **Accessibility & Performance**
+   - The scrolling text must pause when hovered or when the user enables “reduced motion”.
+   - Optimize animation for 60fps performance on all screen sizes.
+   - The ticker should not interfere with scroll or tab navigation.
+
+5. **Deliverables**
+   - Clean, well-commented HTML/CSS/JS code.
+   - Example fallback for users with reduced-motion enabled.
+   - Update README or documentation to include instructions for editing ticker items (projects).
+
+Please confirm understanding before implementing and ensure the new HydroWatch description and animated ticker appear seamlessly integrated into the existing site’s design.

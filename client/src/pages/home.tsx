@@ -6,6 +6,7 @@ import { ExperienceSection } from "@/components/experience-section";
 import { ProjectsSection } from "@/components/projects-section";
 import { EducationSection } from "@/components/education-section";
 import { ContactSection } from "@/components/contact-section";
+import { ProjectTicker } from "@/components/project-ticker";
 import { LoadingScreen } from "@/components/loading-screen";
 import { Button } from "@/components/ui/button";
 import { ArrowUp, Mail, Linkedin, Github, Code } from "lucide-react";
@@ -61,6 +62,9 @@ export default function Home() {
         <EducationSection />
         <ContactSection />
       </main>
+
+      {/* Animated Project Ticker */}
+      <ProjectTicker />
 
       {/* Footer */}
       <footer className="bg-slate-900 dark:bg-black text-white py-12 relative overflow-hidden">
