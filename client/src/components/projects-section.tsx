@@ -6,7 +6,7 @@ const projects = [
   {
     title: "HydroWatch: IoT Water Management System",
     description: "Co-inventor of an IoT solution automating water refilling in livestock farms, reducing manual labor by 80% and water wastage by 30%. Built with ESP8266, ultrasonic sensors, and relays achieving 95% detection accuracy across 10+ prototypes.",
-    image: "https://images.unsplash.com/photo-1581093458791-9f3c3250a8e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
+    image: "https://images.unsplash.com/photo-1581092162562-40038f60412b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
     technologies: ["IoT", "ESP8266", "Sensors", "Automation", "Patent"],
     githubUrl: "#",
     liveUrl: "https://drive.google.com/file/d/1G44us1qeOleSLEaJltR29JdWo0FP3x7v/view",
