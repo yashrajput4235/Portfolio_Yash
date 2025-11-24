@@ -13,7 +13,7 @@ export function HeroSection() {
     { icon: Mail, href: "mailto:yrajpoot648@gmail.com", label: "Email" },
     { icon: Linkedin, href: "https://www.linkedin.com/in/yash-rajput-ab811a258/", label: "LinkedIn" },
     { icon: Github, href: "https://github.com/yashrajput4235", label: "GitHub" },
-    { icon: Code, href: "https://leetcode.com/YashRajput", label: "LeetCode" },
+    { icon: Code, href: "https://leetcode.com/u/Yash_Rajput_/", label: "LeetCode" },
     { icon: Phone, href: "tel:+917876403194", label: "Phone" },
   ];
 
