@@ -4,6 +4,7 @@ import { Github, ExternalLink } from "lucide-react";
 import hydroImage from "@assets/hydro_1763980085735.jpeg";
 import voteImage from "@assets/vote_1763980296152.jpg";
 import todoImage from "@assets/to_do_1763980467708.jpeg";
+import sustainabilityImage from "@assets/types-of-sustainable-development_1763980755479.webp";
 
 const projects = [
   {
@@ -29,6 +30,14 @@ const projects = [
     technologies: ["React", "Redux Toolkit", "JavaScript", "State Management"],
     githubUrl: "https://github.com/yashrajput4235/Todo_using_Redux",
     liveUrl: "#",
+  },
+  {
+    title: "AI-Powered Sustainability Tracker",
+    description: "AI-powered sustainability tracker monitors vehicle emissions, predicts future environmental impact, and provides intelligent suggestions to reduce carbon footprint. Features eco-scores, gamified challenges, real-time data analytics, and an AI assistant for greener operations.",
+    image: sustainabilityImage,
+    technologies: ["Python", "Streamlit", "AI", "ML", "Sustainability"],
+    githubUrl: "https://github.com/yashrajput4235/Sustainability-Tracker",
+    liveUrl: "https://yashrajput4235-sustainability-tracker-app-gjbvuf.streamlit.app/",
   },
   {
     title: "LeetLingo – AI Interview Prep",
