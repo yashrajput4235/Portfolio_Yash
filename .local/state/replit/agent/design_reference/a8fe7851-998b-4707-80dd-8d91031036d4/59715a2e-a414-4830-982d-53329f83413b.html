@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yash Rajput - Software Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': {
+                            50: '#eff6ff',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        },
+                        'dark': {
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'progress': 'progress 2s ease-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(40px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        progress: {
+                            '0%': { width: '0%' },
+                            '100%': { width: 'var(--progress-width)' },
+                        }
+                    }
+                }
+            },
+            darkMode: 'class',
+        }
+    </script>
+</head>
+<body class="font-inter bg-gray-50 dark:bg-dark-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-dark-900/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="font-bold text-xl text-primary-600 dark:text-primary-400">
+                    Yash Rajput
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#hero" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Home</a>
+                    <a href="#skills" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Skills</a>
+                    <a href="#experience" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Experience</a>
+                    <a href="#projects" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Projects</a>
+                    <a href="#education" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Education</a>
+                    <a href="#contact" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Contact</a>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <!-- Theme Toggle -->
+                    <button id="theme-toggle" class="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block"></i>
+                    </button>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" class="md:hidden p-2">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-dark-900 border-t border-gray-200 dark:border-gray-700">
+            <div class="px-4 py-2 space-y-2">
+                <a href="#hero" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">Home</a>
+                <a href="#skills" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">Skills</a>
+                <a href="#experience" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">Experience</a>
+                <a href="#projects" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">Projects</a>
+                <a href="#education" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">Education</a>
+                <a href="#contact" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center justify-center pt-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="text-center lg:text-left animate-fade-in">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                    Hi, I'm <span class="text-primary-600 dark:text-primary-400">Yash Rajput</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
+                    Software Developer & AI Enthusiast
+                </p>
+                <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl">
+                    Passionate about building scalable web applications and AI solutions. Currently pursuing B.Tech in Computer Science with expertise in full-stack development, machine learning, and IoT systems.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-8">
+                    <a href="#contact" class="bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-lg font-medium transition-colors">
+                        Get In Touch
+                    </a>
+                    <a href="#" class="border border-primary-600 text-primary-600 dark:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900/20 px-8 py-3 rounded-lg font-medium transition-colors">
+                        <i class="fas fa-download mr-2"></i>Download Resume
+                    </a>
+                </div>
+                
+                <div class="flex items-center justify-center lg:justify-start space-x-6">
+                    <a href="mailto:yrajpoot648@gmail.com" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/yash-rajput" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="https://github.com/yashrajput4235" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="https://leetcode.com/YashRajput" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                        <i class="fas fa-code text-xl"></i>
+                    </a>
+                    <a href="tel:+917876403194" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                        <i class="fas fa-phone text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="flex justify-center lg:justify-end animate-slide-up">
+                <!-- Professional developer workspace image -->
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=800" 
+                     alt="Professional developer workspace" 
+                     class="rounded-2xl shadow-2xl w-full max-w-md lg:max-w-lg object-cover" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white dark:bg-dark-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Technical Skills</h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    Proficient in modern technologies and frameworks for building robust applications
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Programming Languages -->
+                <div class="bg-gray-50 dark:bg-dark-900 p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-4 flex items-center">
+                        <i class="fas fa-code text-primary-600 dark:text-primary-400 mr-3"></i>
+                        Languages
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="skill-item" data-progress="90">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Python</span>
+                                <span class="text-sm text-gray-600 dark:text-gray-400">90%</span>
+                            </div>
+                            <div class="bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                <div class="bg-primary-600 h-2 rounded-full skill-progress" style="--progress-width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-progress="85">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">JavaScript</span>
+                                <span class="text-sm text-gray-600 dark:text-gray-400">85%</span>
+                            </div>
+                            <div class="bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                <div class="bg-primary-600 h-2 rounded-full skill-progress" style="--progress-width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-progress="80">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">C/C++</span>
+                                <span class="text-sm text-gray-600 dark:text-gray-400">80%</span>
+                            </div>
+                            <div class="bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                <div class="bg-primary-600 h-2 rounded-full skill-progress" style="--progress-width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-progress="75">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Java</span>
+                                <span class="text-sm text-gray-600 dark:text-gray-400">75%</span>
+                            </div>
+                            <div class="bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                <div class="bg-primary-600 h-2 rounded-full skill-progress" style="--progress-width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Frameworks & Libraries -->
+                <div class="bg-gray-50 dark:bg-dark-900 p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-4 flex items-center">
+                        <i class="fas fa-layer-group text-primary-600 dark:text-primary-400 mr-3"></i>
+                        Frameworks
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="skill-item" data-progress="88">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">React.js</span>
+                                <span class="text-sm text-gray-600 dark:text-gray-400">88%</span>
+                            </div>
+                            <div class="bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                <div class="bg-emerald-500 h-2 rounded-full skill-progress" style="--progress-width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-progress="85">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Node.js</span>
+                                <span class="text-sm text-gray-600 dark:text-gray-400">85%</span>
+                            </div>
+                            <div class="bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                <div class="bg-emerald-500 h-2 rounded-full skill-progress" style="--progress-width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-progress="82">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Express</span>
+                                <span class="text-sm text-gray-600 dark:text-gray-400">82%</span>
+                            </div>
+                            <div class="bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                <div class="bg-emerald-500 h-2 rounded-full skill-progress" style="--progress-width: 82%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-progress="80">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Fastify</span>
+                                <span class="text-sm text-gray-600 dark:text-gray-400">80%</span>
+                            </div>
+                            <div class="bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                <div class="bg-emerald-500 h-2 rounded-full skill-progress" style="--progress-width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools & Technologies -->
+                <div class="bg-gray-50 dark:bg-dark-900 p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-4 flex items-center">
+                        <i class="fas fa-tools text-primary-600 dark:text-primary-400 mr-3"></i>
+                        Tools & Tech
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="skill-item" data-progress="92">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Git</span>
+                                <span class="text-sm text-gray-600 dark:text-gray-400">92%</span>
+                            </div>
+                            <div class="bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                <div class="bg-amber-500 h-2 rounded-full skill-progress" style="--progress-width: 92%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-progress="88">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">MongoDB</span>
+                                <span class="text-sm text-gray-600 dark:text-gray-400">88%</span>
+                            </div>
+                            <div class="bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                <div class="bg-amber-500 h-2 rounded-full skill-progress" style="--progress-width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-progress="85">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">PostgreSQL</span>
+                                <span class="text-sm text-gray-600 dark:text-gray-400">85%</span>
+                            </div>
+                            <div class="bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                <div class="bg-amber-500 h-2 rounded-full skill-progress" style="--progress-width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-progress="83">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">TensorFlow</span>
+                                <span class="text-sm text-gray-600 dark:text-gray-400">83%</span>
+                            </div>
+                            <div class="bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                <div class="bg-amber-500 h-2 rounded-full skill-progress" style="--progress-width: 83%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-50 dark:bg-dark-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Professional Experience</h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    My journey in software development and data analytics
+                </p>
+            </div>
+
+            <div class="relative">
+                <!-- Timeline Line -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-1 bg-primary-200 dark:bg-primary-800 h-full"></div>
+
+                <!-- Experience Items -->
+                <div class="space-y-12">
+                    <!-- Switch iT Experience -->
+                    <div class="relative grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                        <div class="lg:text-right">
+                            <div class="bg-white dark:bg-dark-800 p-6 rounded-xl shadow-lg">
+                                <div class="flex items-center justify-between mb-4">
+                                    <span class="bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 px-3 py-1 rounded-full text-sm font-medium">
+                                        May 2025 – July 2025
+                                    </span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-2">Software Development Intern</h3>
+                                <h4 class="text-primary-600 dark:text-primary-400 font-semibold mb-4">Switch iT</h4>
+                                <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-emerald-500 mt-1 mr-3"></i>
+                                        Engineered and deployed scalable REST APIs using Node.js and Fastify, reducing latency by 20%
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-emerald-500 mt-1 mr-3"></i>
+                                        Built secure authentication system using JWT for 1,000+ users
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-emerald-500 mt-1 mr-3"></i>
+                                        Improved user onboarding efficiency by 30% through cross-functional collaboration
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Timeline Dot -->
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary-600 rounded-full border-4 border-white dark:border-dark-900"></div>
+                        
+                        <div class="hidden lg:block"></div>
+                    </div>
+
+                    <!-- PwC Experience -->
+                    <div class="relative grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                        <div class="hidden lg:block"></div>
+                        
+                        <!-- Timeline Dot -->
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary-600 rounded-full border-4 border-white dark:border-dark-900"></div>
+                        
+                        <div class="lg:order-2">
+                            <div class="bg-white dark:bg-dark-800 p-6 rounded-xl shadow-lg">
+                                <div class="flex items-center justify-between mb-4">
+                                    <span class="bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 px-3 py-1 rounded-full text-sm font-medium">
+                                        Feb 2025 – July 2025
+                                    </span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-2">Data Analytics and AI Launchpad Trainee</h3>
+                                <h4 class="text-primary-600 dark:text-primary-400 font-semibold mb-4">PwC</h4>
+                                <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-emerald-500 mt-1 mr-3"></i>
+                                        Completed intensive training in Python, SQL, RDBMS, and AI tools
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-emerald-500 mt-1 mr-3"></i>
+                                        Built predictive models for business insights and decision-making
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-emerald-500 mt-1 mr-3"></i>
+                                        Designed ETL pipelines and data warehouses for analytics projects
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white dark:bg-dark-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    Showcasing my passion for innovative solutions in web development, AI, and IoT
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- LeetLingo Project -->
+                <div class="bg-gray-50 dark:bg-dark-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <!-- AI interview preparation platform interface -->
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
+                         alt="AI interview preparation platform interface" 
+                         class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">LeetLingo – AI Interview Prep</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            Full-stack web application using React, Flask, and NLP to analyze interview responses for vocabulary, fluency, and confidence with 90%+ accuracy.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 px-3 py-1 rounded-full text-sm">React</span>
+                            <span class="bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-400 px-3 py-1 rounded-full text-sm">Flask</span>
+                            <span class="bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-400 px-3 py-1 rounded-full text-sm">NLP</span>
+                            <span class="bg-red-100 dark:bg-red-900 text-red-600 dark:text-red-400 px-3 py-1 rounded-full text-sm">Machine Learning</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <a href="#" class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium">
+                                <i class="fab fa-github mr-2"></i>View on GitHub
+                            </a>
+                            <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Polyp Detection Project -->
+                <div class="bg-gray-50 dark:bg-dark-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <!-- Medical imaging analysis with AI technology -->
+                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
+                         alt="Medical imaging analysis with AI technology" 
+                         class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Polyp Detection using CNN</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            CNN model achieving 99% accuracy on Kvasir medical dataset for automated polyp detection in colonoscopy images, assisting early cancer diagnosis.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-orange-100 dark:bg-orange-900 text-orange-600 dark:text-orange-400 px-3 py-1 rounded-full text-sm">TensorFlow</span>
+                            <span class="bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 px-3 py-1 rounded-full text-sm">Keras</span>
+                            <span class="bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-400 px-3 py-1 rounded-full text-sm">CNN</span>
+                            <span class="bg-red-100 dark:bg-red-900 text-red-600 dark:text-red-400 px-3 py-1 rounded-full text-sm">Medical AI</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <a href="#" class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium">
+                                <i class="fab fa-github mr-2"></i>View on GitHub
+                            </a>
+                            <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Currency Converter Project -->
+                <div class="bg-gray-50 dark:bg-dark-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <!-- Real-time financial data dashboard interface -->
+                    <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
+                         alt="Real-time financial data dashboard interface" 
+                         class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Real-Time Currency Converter</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            React Hooks application with live exchange-rate API integration for real-time global currency conversion with optimized state management.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 px-3 py-1 rounded-full text-sm">React</span>
+                            <span class="bg-yellow-100 dark:bg-yellow-900 text-yellow-600 dark:text-yellow-400 px-3 py-1 rounded-full text-sm">JavaScript</span>
+                            <span class="bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-400 px-3 py-1 rounded-full text-sm">REST API</span>
+                            <span class="bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-400 px-3 py-1 rounded-full text-sm">Hooks</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <a href="#" class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium">
+                                <i class="fab fa-github mr-2"></i>View on GitHub
+                            </a>
+                            <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Publications Section -->
+    <section id="education" class="py-20 bg-gray-50 dark:bg-dark-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Education & Publications</h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    Academic achievements and research contributions
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Education -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-8 flex items-center">
+                        <i class="fas fa-graduation-cap text-primary-600 dark:text-primary-400 mr-3"></i>
+                        Education
+                    </h3>
+                    
+                    <div class="space-y-6">
+                        <!-- B.Tech -->
+                        <div class="bg-white dark:bg-dark-800 p-6 rounded-xl shadow-lg">
+                            <div class="flex items-start justify-between mb-4">
+                                <div>
+                                    <h4 class="text-xl font-bold">B.Tech (Hons) in Computer Science</h4>
+                                    <p class="text-primary-600 dark:text-primary-400 font-semibold">IoT and Intelligent Systems</p>
+                                    <p class="text-gray-600 dark:text-gray-400">Manipal University Jaipur</p>
+                                </div>
+                                <span class="bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 px-3 py-1 rounded-full text-sm font-medium">
+                                    2022 – Present
+                                </span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="bg-emerald-100 dark:bg-emerald-900 text-emerald-600 dark:text-emerald-400 px-3 py-1 rounded-full text-sm font-medium">
+                                    CGPA: 8.88/10
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- 12th Standard -->
+                        <div class="bg-white dark:bg-dark-800 p-6 rounded-xl shadow-lg">
+                            <div class="flex items-start justify-between mb-4">
+                                <div>
+                                    <h4 class="text-lg font-bold">Higher School Certificate (12th)</h4>
+                                    <p class="text-gray-600 dark:text-gray-400">D.A.V Ambuja Vidya Niketan, Darlaghat</p>
+                                </div>
+                                <span class="bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 px-3 py-1 rounded-full text-sm font-medium">
+                                    2021
+                                </span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="bg-emerald-100 dark:bg-emerald-900 text-emerald-600 dark:text-emerald-400 px-3 py-1 rounded-full text-sm font-medium">
+                                    82.8%
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- 10th Standard -->
+                        <div class="bg-white dark:bg-dark-800 p-6 rounded-xl shadow-lg">
+                            <div class="flex items-start justify-between mb-4">
+                                <div>
+                                    <h4 class="text-lg font-bold">Secondary School Certificate (10th)</h4>
+                                    <p class="text-gray-600 dark:text-gray-400">Lakshay Public School</p>
+                                </div>
+                                <span class="bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 px-3 py-1 rounded-full text-sm font-medium">
+                                    2019
+                                </span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="bg-emerald-100 dark:bg-emerald-900 text-emerald-600 dark:text-emerald-400 px-3 py-1 rounded-full text-sm font-medium">
+                                    92.14%
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publications & Certifications -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-8 flex items-center">
+                        <i class="fas fa-certificate text-primary-600 dark:text-primary-400 mr-3"></i>
+                        Publications & Certifications
+                    </h3>
+                    
+                    <div class="space-y-6">
+                        <!-- Patent Publication -->
+                        <div class="bg-white dark:bg-dark-800 p-6 rounded-xl shadow-lg">
+                            <div class="flex items-start mb-4">
+                                <i class="fas fa-lightbulb text-amber-500 text-2xl mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="text-lg font-bold mb-2">HydroWatch: IoT-based Water Management System</h4>
+                                    <p class="text-gray-600 dark:text-gray-400 mb-3">
+                                        Co-inventor of an IoT solution automating water refilling in livestock farms using ESP8266, ultrasonic sensors, and smart controls.
+                                    </p>
+                                    <div class="flex items-center space-x-4 text-sm">
+                                        <span class="bg-amber-100 dark:bg-amber-900 text-amber-600 dark:text-amber-400 px-3 py-1 rounded-full">
+                                            Patent Filed
+                                        </span>
+                                        <span class="text-gray-500 dark:text-gray-400">
+                                            Application No. 202411086633 A
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- NPTEL Certification -->
+                        <div class="bg-white dark:bg-dark-800 p-6 rounded-xl shadow-lg">
+                            <div class="flex items-start mb-4">
+                                <i class="fas fa-award text-primary-600 dark:text-primary-400 text-2xl mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="text-lg font-bold mb-2">Design and Analysis of Algorithms</h4>
+                                    <p class="text-gray-600 dark:text-gray-400 mb-3">
+                                        Earned certification from IIT Madras through NPTEL, demonstrating expertise in algorithmic design and computational complexity.
+                                    </p>
+                                    <div class="flex items-center space-x-4 text-sm">
+                                        <span class="bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 px-3 py-1 rounded-full">
+                                            NPTEL - IIT Madras
+                                        </span>
+                                        <span class="text-gray-500 dark:text-gray-400">2024</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Dean's List -->
+                        <div class="bg-white dark:bg-dark-800 p-6 rounded-xl shadow-lg">
+                            <div class="flex items-start mb-4">
+                                <i class="fas fa-star text-emerald-500 text-2xl mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="text-lg font-bold mb-2">Dean's List of Excellence</h4>
+                                    <p class="text-gray-600 dark:text-gray-400 mb-3">
+                                        Recognized for outstanding academic performance in the First and Fifth Semesters at Manipal University Jaipur.
+                                    </p>
+                                    <div class="flex items-center space-x-4 text-sm">
+                                        <span class="bg-emerald-100 dark:bg-emerald-900 text-emerald-600 dark:text-emerald-400 px-3 py-1 rounded-full">
+                                            Academic Excellence
+                                        </span>
+                                        <span class="text-gray-500 dark:text-gray-400">Multiple Semesters</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white dark:bg-dark-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Let's Work Together</h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    I'm always open to discussing new opportunities, collaborations, and exciting projects. Feel free to reach out!
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Information -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">Get In Touch</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <div class="bg-primary-100 dark:bg-primary-900 p-3 rounded-lg mr-4">
+                                <i class="fas fa-envelope text-primary-600 dark:text-primary-400"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium">Email</p>
+                                <a href="mailto:yrajpoot648@gmail.com" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400">
+                                    yrajpoot648@gmail.com
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="bg-primary-100 dark:bg-primary-900 p-3 rounded-lg mr-4">
+                                <i class="fas fa-phone text-primary-600 dark:text-primary-400"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium">Phone</p>
+                                <a href="tel:+917876403194" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400">
+                                    +91 7876403194
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="bg-primary-100 dark:bg-primary-900 p-3 rounded-lg mr-4">
+                                <i class="fab fa-linkedin text-primary-600 dark:text-primary-400"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium">LinkedIn</p>
+                                <a href="https://linkedin.com/in/yash-rajput" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400">
+                                    linkedin.com/in/yash-rajput
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="bg-primary-100 dark:bg-primary-900 p-3 rounded-lg mr-4">
+                                <i class="fab fa-github text-primary-600 dark:text-primary-400"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium">GitHub</p>
+                                <a href="https://github.com/yashrajput4235" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400">
+                                    github.com/yashrajput4235
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div>
+                    <form class="space-y-6" data-mock="true">
+                        <!-- TODO: Implement form submission handling -->
+                        <div>
+                            <label for="name" class="block text-sm font-medium mb-2">Full Name</label>
+                            <input type="text" id="name" name="name" 
+                                   class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-dark-900 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                                   placeholder="Your full name" data-mock="true">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium mb-2">Email Address</label>
+                            <input type="email" id="email" name="email"
+                                   class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-dark-900 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                                   placeholder="your.email@example.com" data-mock="true">
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-sm font-medium mb-2">Subject</label>
+                            <input type="text" id="subject" name="subject"
+                                   class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-dark-900 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                                   placeholder="What's this about?" data-mock="true">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium mb-2">Message</label>
+                            <textarea id="message" name="message" rows="5"
+                                      class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-dark-900 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none"
+                                      placeholder="Tell me about your project or opportunity..." data-mock="true"></textarea>
+                        </div>
+                        
+                        <button type="submit" 
+                                class="w-full bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-6 rounded-lg transition-colors"
+                                data-event="click:handleSubmit">
+                            <i class="fas fa-paper-plane mr-2"></i>Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 dark:bg-black text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h3 class="text-2xl font-bold mb-4">Yash Rajput</h3>
+                <p class="text-gray-400 mb-6">Software Developer & AI Enthusiast</p>
+                
+                <div class="flex items-center justify-center space-x-6 mb-8">
+                    <a href="mailto:yrajpoot648@gmail.com" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/yash-rajput" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="https://github.com/yashrajput4235" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="https://leetcode.com/YashRajput" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fas fa-code text-xl"></i>
+                    </a>
+                </div>
+                
+                <div class="border-t border-gray-800 pt-8">
+                    <p class="text-gray-400 text-sm">
+                        © 2024 Yash Rajput. All rights reserved. Built with passion for technology and innovation.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary-600 hover:bg-primary-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        (() => {
+            // Theme Toggle Functionality
+            const themeToggle = document.getElementById('theme-toggle');
+            const html = document.documentElement;
+            
+            // Check for saved theme preference
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                html.classList.toggle('dark', savedTheme === 'dark');
+            } else {
+                // Default to system preference
+                html.classList.toggle('dark', window.matchMedia('(prefers-color-scheme: dark)').matches);
+            }
+            
+            themeToggle.addEventListener('click', () => {
+                html.classList.toggle('dark');
+                localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+            });
+
+            // Mobile Menu Toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Smooth Scrolling for Navigation Links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        // Close mobile menu if open
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+
+            // Skill Progress Animation
+            const observerOptions = {
+                threshold: 0.5,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const skillObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const progressBars = entry.target.querySelectorAll('.skill-progress');
+                        progressBars.forEach(bar => {
+                            bar.style.animation = 'progress 2s ease-out forwards';
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            // Observe skills section
+            const skillsSection = document.getElementById('skills');
+            if (skillsSection) {
+                skillObserver.observe(skillsSection);
+            }
+
+            // Fade-in Animation on Scroll
+            const fadeElements = document.querySelectorAll('.animate-fade-in, .animate-slide-up');
+            const fadeObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            fadeElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+                fadeObserver.observe(el);
+            });
+
+            // Back to Top Button
+            const backToTop = document.getElementById('back-to-top');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTop.classList.remove('opacity-0', 'invisible');
+                } else {
+                    backToTop.classList.add('opacity-0', 'invisible');
+                }
+            });
+            
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Active Navigation Link Highlighting
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (window.pageYOffset >= sectionTop - 100) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('text-primary-600', 'dark:text-primary-400');
+                    link.classList.add('text-gray-700', 'dark:text-gray-300');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.remove('text-gray-700', 'dark:text-gray-300');
+                        link.classList.add('text-primary-600', 'dark:text-primary-400');
+                    }
+                });
+            });
+
+            // Form Submission Handler (TODO: Implement actual submission)
+            document.querySelector('form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                // TODO: Implement form submission logic
+                alert('Form submission functionality would be implemented here');
+            });
+        })();
+    </script>
+</body>
+</html>

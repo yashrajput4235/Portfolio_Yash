@@ -3,10 +3,16 @@ import { Mail, Linkedin, Github, Code, Phone, Download } from "lucide-react";
 import { TypingAnimation } from "./typing-animation";
 import { ParticlesBackground } from "./particles-background";
 import aiPhoto from "@assets/ai photo_1753038233607.jpg";
+import resumePdf from "@assets/Yash_Rajput_229311221_1763980862079.pdf";
 
 export function HeroSection() {
   const handleDownloadResume = () => {
-    window.open("/api/resume", "_blank");
+    const link = document.createElement("a");
+    link.href = resumePdf;
+    link.download = "Yash_Rajput_Resume.pdf";
+    link.target = "_blank";
+    link.rel = "noopener";
+    link.click();
   };
 
   const socialLinks = [

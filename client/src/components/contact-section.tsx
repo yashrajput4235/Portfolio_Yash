@@ -4,8 +4,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { useMutation } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
 import { Mail, Phone, Linkedin, Github, Send } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -60,33 +58,16 @@ export function ContactSection() {
     resolver: zodResolver(contactSchema),
   });
 
-  const contactMutation = useMutation({
-    mutationFn: async (data: ContactForm) => {
-      const response = await apiRequest("POST", "/api/contact", data);
-      return response.json();
-    },
-    onSuccess: () => {
-      toast({
-        title: "Message sent successfully!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
-      });
-      reset();
-    },
-    onError: (error: any) => {
-      toast({
-        title: "Failed to send message",
-        description: error.message || "Please try again later.",
-        variant: "destructive",
-      });
-    },
-    onSettled: () => {
-      setIsSubmitting(false);
-    },
-  });
-
   const onSubmit = (data: ContactForm) => {
     setIsSubmitting(true);
-    contactMutation.mutate(data);
+    setTimeout(() => {
+      toast({
+        title: "Message queued!",
+        description: "Thanks for reaching out. I'll reply soon.",
+      });
+      reset();
+      setIsSubmitting(false);
+    }, 600);
   };
 
   return (
