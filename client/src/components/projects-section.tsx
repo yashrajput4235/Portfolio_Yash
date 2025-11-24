@@ -2,6 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Github, ExternalLink } from "lucide-react";
 import hydroImage from "@assets/hydro_1763980085735.jpeg";
+import voteImage from "@assets/vote_1763980296152.jpg";
 
 const projects = [
   {
@@ -11,6 +12,14 @@ const projects = [
     technologies: ["IoT", "ESP8266", "Sensors", "Automation", "Patent"],
     githubUrl: "#",
     liveUrl: "https://drive.google.com/file/d/1G44us1qeOleSLEaJltR29JdWo0FP3x7v/view",
+  },
+  {
+    title: "Voting App - Backend System",
+    description: "Fully featured backend voting application enabling voters to cast votes for their respective candidates. Automatically counts all votes and determines the winner, displaying winning candidate name or party affiliation with complete vote analytics.",
+    image: voteImage,
+    technologies: ["Node.js", "MongoDB", "Express", "Backend", "Voting System"],
+    githubUrl: "https://github.com/yashrajput4235/VotingApp_Backend",
+    liveUrl: "#",
   },
   {
     title: "LeetLingo – AI Interview Prep",
