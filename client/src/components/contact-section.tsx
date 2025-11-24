@@ -36,8 +36,8 @@ const contactInfo = [
   {
     icon: Linkedin,
     label: "LinkedIn",
-    value: "linkedin.com/in/yash-rajput",
-    href: "https://linkedin.com/in/yash-rajput",
+    value: "linkedin.com/in/yash-rajput-ab811a258",
+    href: "https://www.linkedin.com/in/yash-rajput-ab811a258/",
   },
   {
     icon: Github,

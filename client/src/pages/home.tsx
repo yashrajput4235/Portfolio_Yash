@@ -39,7 +39,7 @@ export default function Home() {
 
   const socialLinks = [
     { icon: Mail, href: "mailto:yrajpoot648@gmail.com" },
-    { icon: Linkedin, href: "https://linkedin.com/in/yash-rajput" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/yash-rajput-ab811a258/" },
     { icon: Github, href: "https://github.com/yashrajput4235" },
     { icon: Code, href: "https://leetcode.com/YashRajput" },
   ];

@@ -11,7 +11,7 @@ export function HeroSection() {
 
   const socialLinks = [
     { icon: Mail, href: "mailto:yrajpoot648@gmail.com", label: "Email" },
-    { icon: Linkedin, href: "https://linkedin.com/in/yash-rajput", label: "LinkedIn" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/yash-rajput-ab811a258/", label: "LinkedIn" },
     { icon: Github, href: "https://github.com/yashrajput4235", label: "GitHub" },
     { icon: Code, href: "https://leetcode.com/YashRajput", label: "LeetCode" },
     { icon: Phone, href: "tel:+917876403194", label: "Phone" },
