@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Github, ExternalLink } from "lucide-react";
 import hydroImage from "@assets/hydro_1763980085735.jpeg";
 import voteImage from "@assets/vote_1763980296152.jpg";
+import todoImage from "@assets/to_do_1763980467708.jpeg";
 
 const projects = [
   {
@@ -19,6 +20,14 @@ const projects = [
     image: voteImage,
     technologies: ["Node.js", "MongoDB", "Express", "Backend", "Voting System"],
     githubUrl: "https://github.com/yashrajput4235/VotingApp_Backend",
+    liveUrl: "#",
+  },
+  {
+    title: "Todo App - Redux Toolkit",
+    description: "Modern todo application built with React and Redux Toolkit for efficient state management. Enables users to create, update, delete, and organize tasks with persistent state management and smooth user interactions.",
+    image: todoImage,
+    technologies: ["React", "Redux Toolkit", "JavaScript", "State Management"],
+    githubUrl: "https://github.com/yashrajput4235/Todo_using_Redux",
     liveUrl: "#",
   },
   {
